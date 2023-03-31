@@ -94,7 +94,7 @@
 	        <input type="email" id="email" name="email" placeholder="Email" required>
 	        <input type="password" id="password" name="password" placeholder="Password" required>
 	        <button type="submit" style="background-color: #4CAF50;color: white;border:none;margin-top:15px; padding:14px;cursor: pointer; font-weight: bold;">CONTINUE</button>
-	 		<center><h5><a href="landing_page.php" style="text-decoration: none;">KEMBALI KE BERANDA</a></h5></center><br>
+	 		<center><h5><a href="index.php" style="text-decoration: none;">KEMBALI KE BERANDA</a></h5></center><br>
 	      </form>
 	    </div>
 	</div>
