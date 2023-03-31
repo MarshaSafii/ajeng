@@ -123,26 +123,6 @@
 		  border-radius: 5px;
 		  text-decoration: none;
 		}
-		.viewmore{
-			display: fixed;
-			color: #333333;
-			font-family: 'Avenir Next';
-			font-style: normal;
-			font-weight: 500;
-			font-size: 18px;
-			opacity: 85%;
-			text-decoration: none;
-		}
-		.thumbnail{
-			display: grid;
-			grid-template-columns: 700px 1fr;
-			grid-gap: 30px;
-			margin: 40px;
-		}
-		.thumbnail img{
-			width: 100%;
-			height: auto;
-		}
 		footer{
 			display: grid;
 			grid-template-columns: 400px 1fr 1fr;
