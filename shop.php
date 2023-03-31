@@ -166,7 +166,7 @@
 
 				<ul class="menubar">
 					<li>
-						<a href="landing_page.php">HOME</a>
+						<a href="index.html">HOME</a>
 					</li>
 
 					<li>
