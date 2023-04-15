@@ -38,7 +38,9 @@
 			list-style: none;
 			margin-right: 70px;
 			transition: transform .3s ease;
-
+		}
+		.toggle{
+			display: none;
 		}
 
 		.menubar li a{
@@ -122,6 +124,8 @@
 		  padding: 10px 20px;
 		  border-radius: 5px;
 		  text-decoration: none;
+		  font-size: 16px;
+		  border: none;
 		}
 		.viewmore{
 			display: fixed;
@@ -172,9 +176,29 @@
 			margin: auto;
 			font-size: 40px;
 		}
-		.toggle{
-			display:none;
+		.boxcart{
+			width: 100%;
+			min-height: 300px;
+			position: flex;
+			background-color: white;
+			padding: 20px 70px;
+			margin-bottom: 40px;
 		}
+		.nama-produk{
+			float: left;
+			display: inline-block;
+			margin-right: 10px;
+		}
+		.harga-produk{
+			float: right;
+			display: inline-block;
+		}
+		.total{
+			clear: both;
+			float: right;
+			font-weight: bold;
+		}
+
 		/* Untuk tampilan layar dengan lebar maksimum 768px */
 		@media screen and (max-width: 768px) {
 			.menubar{
@@ -201,7 +225,7 @@
 		    white-space: nowrap;
 		    max-width: 400px;
 		  }
-		.thumbnail{
+		  .thumbnail{
 			display: grid;
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr;
@@ -209,8 +233,8 @@
 			margin: 10px;
 		}
 		.thumbnail h1{
-			font-size: 40px;
-			padding: 60px 0;
+			font-size: 20px;
+			padding: 70px 0;
 		}
 		.contact img, .payment img{
 			width: 30px;
@@ -229,6 +253,7 @@
 		.abt h2, .contact h2, .payment h2{
 			font-size: 14px;
 		}
+
 		/* Untuk tampilan layar dengan lebar minimum 768px dan maksimum 1024px */
 		@media screen and (min-width: 768px) and (max-width: 1024px) {
 		  /* CSS untuk mengatur tata letak pada layar dengan lebar antara 768px dan 1024px */
@@ -280,88 +305,95 @@
 			    <h3>Renew You Anti Aging Night Cream</h3>
 			    <p><del>Rp114.000</del><b>  Rp91.200</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="checkout.php" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Renew You Anti Aging Night Cream', 91200);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr2.png" alt="Produk 2">
 			    <h3>Renew You Anti Aging Eye Cream</h3>
 			    <p><b>Rp92.000</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Renew You Anti Aging Eye Cream', 92000);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr3.png" alt="Produk 3">
 			    <h3>Perfect Bright Tone Up Micellar Water</h3>
 			    <p><del>Rp42.500</del><b>  Rp31.500</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Perfect Bright Tone Up Micellar Water', 31500);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr4.png" alt="Produk 4">
 			    <h3>Nature Daily Hydramild Toner Essence</h3>
 			    <p><del>Rp22.500</del><b>  Rp18.000</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Nature Daily Hydramild Toner Essence', 18000);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr5.png" alt="Produk 5">
 			    <h3>Nature Daily Capsule Mask</h3>
 			    <p><del>Rp18.500</del><b>  Rp12.000</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Nature Daily Capsule Mask', 12000);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr6.png" alt="Produk 6">
 			    <h3>Hydra Rose Micro Gel Serum</h3>
 			    <p><del>Rp142.500</del><b>  Rp112.000</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Hydra Rose Micro Gel Serum', 112000);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr7.png" alt="Produk 7">
 			    <h3>Nature Daily Hydramild Toner Essence</h3>
 			    <p><del>Rp22.500</del><b>  Rp18.000</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Nature Daily Hydramild Toner Essence', 18000);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr8.png" alt="Produk 8">
 			    <h3>Crystal Secret Micellar Cleansing Gel</h3>
 			    <p><del>Rp44.500</del><b>  Rp38.000</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Crystal Secret Micellar Cleansing Gel', 38000);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr9.png" alt="Produk 9">
 			    <h3>Hydra Rose Petal Infused Toner</h3>
 			    <p><del>Rp156.500</del><b>  Rp114.750</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Hydra Rose Petal Infused Toner', 114750);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr10.png" alt="Produk 10">
 			    <h3>Acnederm Pore Blackhead Balm</h3>
 			    <p><b>  Rp44.500</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Acnederm Pore Blackhead Balm', 44500);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr11.png" alt="Produk 11">
 			    <h3>UV Shield Essential Sunscreen Gel SPF 30 PA+++</h3>
 			    <p><b>  Rp32.500</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('UV Shield Essential Sunscreen Gel SPF 30 PA+++', 32500);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr12.png" alt="Produk 12">
 			    <h3>Lightening Serum Ampoule</h3>
 			    <p><del>Rp58.250</del><b>  Rp50.500</b></p>
 			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <button onclick="addToCart('Lightening Serum Ampoule', 50500);scrollToCart();" class="btn">Beli Sekarang</button>
 			  </div>
 
 			  <!-- Tambahkan lebih banyak elemen .product-item sesuai kebutuhan -->
 			</div>
+			<div class="boxcart">
+			<div id="cart">
+				<h1><center>Shopping Cart</center></h1><hr><br>
+				<div class="total"></div>
+			</div>
+			<button onclick="resetCart()" class="btn" style="margin-top: 30px; background-color: #647B64">Reset Cart</button>
+		</div>
 
 		</div>
 
@@ -373,7 +405,10 @@
 		<footer>
 			<div class="abt">
 				<h2>ABOUT MARDAH</h2><br>
-				<p>Wardah is a beauty brand that cares and understands the wish of every women to always feel calm and comfortable with their look.</p>
+				<p>Paragon Corp.</p>
+				<p>Jalan Swadarma Raya Kampung Baru IV No. 1 Jakarta</p>
+				<p>12250 Indonesia</p>
+				<p>Fax +62 21 585 2439</p>
 			</div>
 				<div class="contact" id="abtus">
 					<h2>CONTACT US</h2><br>
@@ -398,6 +433,8 @@
 		</footer>
 	</div>
 </body>
+
+<script src="cart.js"></script>
 <script type="text/javascript">
 	const toggle = document.querySelector('.toggle');
 const menu = document.querySelector('.menubar');
