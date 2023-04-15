@@ -220,6 +220,155 @@
 			margin: auto;
 			font-size: 40px;
 		}
+		@media screen and (max-width: 768px) {
+			.menubar{
+				display: none;
+		}
+			.toggle {
+		    display: block;
+		    cursor: pointer;
+		  }
+		  .menubar.open {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		  }
+		  .menubar li {
+    		margin: 10px 0;
+  			}
+  			.wrapper{
+  				max-width: 100%;
+  			}
+  			.hero-content{
+			position: absolute;
+			width: 100%;
+			height: 400px;
+			left: 30px;
+			top: 150px;
+		}
+		header{
+			min-height: 300px;
+		}
+		header h1{
+			font-size: 25px;
+		}
+		header p{
+			font-size: 14px;
+			line-height: 132%;
+		}
+		.brand img{
+			display: none;
+		}header a{
+			padding: 15px 20px;
+			float: left;
+		}
+		  .product-grid {
+		    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		  }
+		  .product-item p{
+		  	overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    max-width: 400px;
+		  }
+		  .thumbnail{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			grid-gap: 10px;
+			margin: 10px;
+		}
+		.thumbnail h1{
+			font-size: 20px;
+			padding: 70px 0;
+		}
+		.contact img, .payment img{
+			width: 30px;
+			height: auto;
+		}
+		  footer{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto;
+			grid-gap: 20px;
+			padding: 10px 15px;
+			background-color:#647B64;
+			color: #FEFEFE; 
+			font-size: 12px;
+		}
+		.abt h2, .contact h2, .payment h2{
+			font-size: 14px;
+		}
+		@media screen and (max-width: 768px) {
+			.menubar{
+				display: none;
+		}
+		.hero-content{
+			width: 90%;
+		}
+			.toggle {
+		    display: block;
+		    cursor: pointer;
+		  }
+		  .menubar.open {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		  }
+		  .menubar li {
+    		margin: 10px 0;
+  			}
+		  .product-grid {
+		    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		  }
+		  .product-item p{
+		  	overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    max-width: 400px;
+		  }
+		  .thumbnail{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			grid-gap: 10px;
+			margin: 10px;
+		}
+		.thumbnail h1{
+			font-size: 20px;
+			padding: 70px 0;
+		}
+		.contact img, .payment img{
+			width: 30px;
+			height: auto;
+		}
+		  footer{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto;
+			grid-gap: 20px;
+			padding: 10px 15px;
+			background-color:#647B64;
+			color: #FEFEFE; 
+			font-size: 12px;
+		}
+		.abt h2, .contact h2, .payment h2{
+			font-size: 14px;
+		}
+		#get{
+			display: none;
+		}
+		@media screen and (min-width: 768px) and (max-width: 1024px) {
+		 	.brand{
+		 		display: none;
+		 	}
+		 	header{
+		 		text-align: center;
+		 	}
+		}
+		/* Untuk tampilan layar dengan lebar minimum 1024px */
+		@media screen and (min-width: 1024px) {
+		}
 	</style>
 </head>
 <body>
@@ -249,6 +398,7 @@
 						<a href="register.html" target='_blank' id="btn-register">Register</a>
 					</li>
 				</ul>
+				<button class="toggle">=</button>
 			</nav>
 		</div>
 	</div>
@@ -275,49 +425,49 @@
 			    <img src="images/pr.png" alt="Produk 1">
 			    <h3>Renew You Anti Aging Night Cream</h3>
 			    <p><del>Rp114.000</del><b>  Rp91.200</b></p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr2.png" alt="Produk 2">
 			    <h3>Renew You Anti Aging Eye Cream</h3>
 			    <p><b>Rp92.000</b></p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr3.png" alt="Produk 3">
 			    <h3>Perfect Bright Tone Up Micellar Water</h3>
 			    <p><del>Rp42.500</del><b>  Rp31.500</b></p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr4.png" alt="Produk 4">
 			    <h3>Nature Daily Hydramild Toner Essence</h3>
 			    <p><del>Rp22.500</del><b>  Rp18.000</b></p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr5.png" alt="Produk 5">
 			    <h3>Nature Daily Capsule Mask</h3>
 			    <p><del>Rp18.500</del><b>  Rp12.000</b></p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr6.png" alt="Produk 6">
 			    <h3>Hydra Rose Micro Gel Serum</h3>
 			    <p><del>Rp142.500</del><b>  Rp112.000</b></p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr7.png" alt="Produk 7">
 			    <h3>Nature Daily Hydramild Toner Essence</h3>
 			    <p><del>Rp22.500</del><b>  Rp18.000</b></p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr8.png" alt="Produk 8">
 			    <h3>Crystal Secret Micellar Cleansing Gel</h3>
 			    <p><del>Rp44.500</del><b>  Rp38.000</b></p>
-			    <a href="#" class="btn">Beli Sekarang</a>
+			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			  </div>
 
 			  <!-- Tambahkan lebih banyak elemen .product-item sesuai kebutuhan -->
@@ -334,7 +484,10 @@
 		<footer>
 			<div class="abt">
 				<h2>ABOUT MARDAH</h2><br>
-				<p>Mardah is a beauty brand that cares and understands the wish of every women to always feel calm and comfortable with their look.</p>
+				<p>Paragon Corp.</p>
+				<p>Jalan Swadarma Raya Kampung Baru IV No. 1 Jakarta</p>
+				<p>12250 Indonesia</p>
+				<p>Fax +62 21 585 2439</p>
 			</div>
 				<div class="contact" id="abtus">
 					<h2>CONTACT US</h2><br>
@@ -359,4 +512,13 @@
 		</footer>
 	</div>
 </body>
+
+<script type="text/javascript">
+const toggle = document.querySelector('.toggle');
+const menu = document.querySelector('.menubar');
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+</script>
 </html>
