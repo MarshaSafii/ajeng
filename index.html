@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
 	<title>Mardah</title>
 
 	<style type="text/css">
@@ -13,8 +16,8 @@
 		}
 		body{
 			scroll-behavior: smooth;
-			font-family: "Roboto",sans-serif;
-			background: #E5E5E5;
+			font-family: 'Montserrat', sans-serif;
+			background: #fbfbfb;
 			overflow-x:hidden;
 		}
 
@@ -32,7 +35,7 @@
 			display: flex;
 		}
 		.logo{
-			padding-left: 90px;
+			padding-left: 50px;
 		}
 		.menubar li{
 			list-style: none;
@@ -43,7 +46,6 @@
 
 		.menubar li a{
 			color: #333333;
-			font-family: 'Avenir Next';
 			font-style: normal;
 			font-weight: 500;
 			font-size: 16px;
@@ -54,6 +56,9 @@
 		}
 		.menubar li:hover{
 			transform: scale(1.1);
+		}
+		.toggle{
+			display: none;
 		}
 		#btn-register{
 			padding: 10px 15px;
@@ -82,7 +87,7 @@
 			left: 180px;
 			top: 200px;
 		}
-		header h1,h2, .thumbnail h1{
+		header h1{
 			font-family: 'Avenir Next';
 			font-style: normal;
 			font-weight: 500;
@@ -96,8 +101,10 @@
 			font-size: 22px;
 			color: white;
 		}
+		h1{
+			color: #333333;
+		}
 		header p{
-			font-family: 'Avenir Next';
 			font-style: normal;
 			font-weight: 400;
 			font-size: 18px;
@@ -145,7 +152,7 @@
 		}
 
 		.product-item img {
-		  width: 100%;
+		  width: 80%;
 		  height: auto;
 		  transition: transform .5s ease;
 		  margin-bottom: 10px;
@@ -170,16 +177,6 @@
 		  padding: 10px 20px;
 		  border-radius: 5px;
 		  text-decoration: none;
-		}
-		.viewmore{
-			display: fixed;
-			color: #333333;
-			font-family: 'Avenir Next';
-			font-style: normal;
-			font-weight: 500;
-			font-size: 18px;
-			opacity: 85%;
-			text-decoration: none;
 		}
 		.thumbnail{
 			display: grid;
@@ -220,10 +217,38 @@
 			margin: auto;
 			font-size: 40px;
 		}
-		.toggle{
-				display:none;
+		.icons {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  width: 100%;
+		  max-width: 750px;
+		  margin: 30px auto;
 		}
-		
+
+		.icon-box {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  flex-direction: column;
+		  width: 100%;
+		  max-width: 100px;
+		  margin-right: 30px;
+		}
+
+		.icon-box i {
+		  font-size: 56px;
+		  margin-bottom: 20px;
+		  color: #444;
+		}
+
+		.icon-box span {
+		  font-size: 16px;
+		  font-weight: bold;
+		  text-align: center;
+		  color: #fff;
+		}
+
 		@media screen and (max-width: 768px) {
 			.menubar{
 				display: none;
@@ -303,6 +328,7 @@
 		.abt h2, .contact h2, .payment h2{
 			font-size: 14px;
 		}
+
 		@media screen and (max-width: 768px) {
 			.menubar{
 				display: none;
@@ -362,6 +388,12 @@
 		#get{
 			display: none;
 		}
+		.icon-box i {
+		    font-size: 40px;
+		  }
+		  .icon-box {
+		  margin-right: 15px;
+		}
 		@media screen and (min-width: 768px) and (max-width: 1024px) {
 		 	.brand{
 		 		display: none;
@@ -415,7 +447,7 @@
 					<h1>Inspiring Beauty!</h1>
 					<p>Halal Green Beauty. Discover the gorgeous shine with us. #FeelTheBeauty</p>
 				</div>
-				<a href="#" target="_blank" style="margin-top: 225px;">
+				<a href="register.html" target="_blank" style="margin-top: 225px;" id="get">
 					Get Started!
 				</a>
 
@@ -424,59 +456,62 @@
 				</div>
 			</header>
 			
+			<div class="wrapper" style="padding-top: 50px;">
+				<h1 style="font-family:'Avenir Next'; color: #4b6375; text-align: center; margin-left: 30px;">Our Best Seller Product.</h1>
 			<div class="product-grid" id="produk">
 			  <div class="product-item">
 			    <img src="images/pr.png" alt="Produk 1">
 			    <h3>Renew You Anti Aging Night Cream</h3>
-			    <p><del>Rp114.000</del><b>  Rp91.200</b></p>
-			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			  </div>
-			  <div class="product-item">
-			    <img src="images/pr2.png" alt="Produk 2">
-			    <h3>Renew You Anti Aging Eye Cream</h3>
-			    <p><b>Rp92.000</b></p>
-			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			    <p id="harga"><del>Rp114.000</del><b>  Rp91.200</b></p>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr3.png" alt="Produk 3">
 			    <h3>Perfect Bright Tone Up Micellar Water</h3>
-			    <p><del>Rp42.500</del><b>  Rp31.500</b></p>
-			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			  </div>
-			  <div class="product-item">
-			    <img src="images/pr4.png" alt="Produk 4">
-			    <h3>Nature Daily Hydramild Toner Essence</h3>
-			    <p><del>Rp22.500</del><b>  Rp18.000</b></p>
-			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			    <p id="harga"><del>Rp42.500</del><b>  Rp31.500</b></p>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr5.png" alt="Produk 5">
 			    <h3>Nature Daily Capsule Mask</h3>
-			    <p><del>Rp18.500</del><b>  Rp12.000</b></p>
-			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			    <p id="harga"><del>Rp18.500</del><b>  Rp12.000</b></p>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
 			  </div>
 			  <div class="product-item">
 			    <img src="images/pr6.png" alt="Produk 6">
 			    <h3>Hydra Rose Micro Gel Serum</h3>
-			    <p><del>Rp142.500</del><b>  Rp112.000</b></p>
-			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			    <p id="harga"><del>Rp142.500</del><b>  Rp112.000</b></p>
+			    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
 			  </div>
-			  <div class="product-item">
-			    <img src="images/pr7.png" alt="Produk 7">
-			    <h3>Nature Daily Hydramild Toner Essence</h3>
-			    <p><del>Rp22.500</del><b>  Rp18.000</b></p>
-			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			  </div>
-			  <div class="product-item">
-			    <img src="images/pr8.png" alt="Produk 8">
-			    <h3>Crystal Secret Micellar Cleansing Gel</h3>
-			    <p><del>Rp44.500</del><b>  Rp38.000</b></p>
-			    <p>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			  </div>
-
+			  
 			  <!-- Tambahkan lebih banyak elemen .product-item sesuai kebutuhan -->
 			</div>
-			  <center><a href="shop.html" class="viewmore">LIHAT SELENGKAPNYA >></a></center>
+		</div>
+
+		<div class="wrapper" style="background-color:#647B64; padding: 60px 0;">
+			<h1 style="color: #fff; text-align: center;">Mardah Philosophy</h1>
+			<div class="icons">
+			  <div class="icon-box">
+			    <i class="fas fa-circle"></i>
+			    <span>Halal</span>
+			  </div>
+			  <div class="icon-box">
+			    <i class="fas fa-leaf"></i>
+			    <span>Natural</span>
+			  </div>
+			  <div class="icon-box">
+			    <i class="fas fa-wine-bottle"></i>
+			    <span>Alcohol Free</span>
+			  </div>
+			  <div class="icon-box">
+			    <i class="fas fa-globe"></i>
+			    <span>Local & Global Expert</span>
+			  </div>
+			  <div class="icon-box">
+			    <i class="fas fa-paw"></i>
+			    <span>Cruelty Free</span>
+			  </div>
+			</div>
 
 		</div>
 
@@ -495,7 +530,7 @@
 			</div>
 				<div class="contact" id="abtus">
 					<h2>CONTACT US</h2><br>
-					<a href="#"><img src="images/operator.png"></a>
+					<a href="mailto:ajengkalista08@gmail.com"><img src="images/operator.png"></a>
 					<a href="https://www.instagram.com/ajengkalistaa/"><img src="images/instagram.png"></a>
 					<a href="#"><img src="images/twiter.png"></a>
 					<a href="#"><img src="images/facebook.png"></a>
@@ -516,9 +551,8 @@
 		</footer>
 	</div>
 </body>
-
 <script type="text/javascript">
-const toggle = document.querySelector('.toggle');
+	const toggle = document.querySelector('.toggle');
 const menu = document.querySelector('.menubar');
 
 toggle.addEventListener('click', () => {
