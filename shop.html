@@ -4,6 +4,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Memuat library jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Memuat library Bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 	<title>Mardah</title>
 
 	<style type="text/css">
@@ -13,8 +23,8 @@
 		}
 		body{
 			scroll-behavior: smooth;
-			font-family: "Roboto",sans-serif;
-			background: #E5E5E5;
+			font-family: 'Montserrat', sans-serif;
+			background: #fbfbfb;
 			overflow-x:hidden;
 		}
 
@@ -32,7 +42,7 @@
 			display: flex;
 		}
 		.logo{
-			padding-left: 90px;
+			padding-left: 50px;
 		}
 		.menubar li{
 			list-style: none;
@@ -45,7 +55,6 @@
 
 		.menubar li a{
 			color: #333333;
-			font-family: 'Avenir Next';
 			font-style: normal;
 			font-weight: 500;
 			font-size: 16px;
@@ -69,7 +78,7 @@
 			color: #FEFEFE;
 
 		}
-		header h1,h1,h2{
+		header h1,h1{
 			font-family: 'Avenir Next';
 			font-style: normal;
 			font-weight: 500;
@@ -91,6 +100,7 @@
 		}
 
 		.product-item {
+		font-family: 'roboto', sans-serif;
 		  background-color: #ffffff;
 		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 		  padding: 20px;
@@ -109,6 +119,7 @@
 		}
 
 		.product-item h3 {
+			font-size: 22px;
 		  margin-top: 0;
 		}
 
@@ -126,17 +137,7 @@
 		  text-decoration: none;
 		  font-size: 16px;
 		  border: none;
-		cursor: pointer;
-		}
-		.viewmore{
-			display: fixed;
-			color: #333333;
-			font-family: 'Avenir Next';
-			font-style: normal;
-			font-weight: 500;
-			font-size: 18px;
-			opacity: 85%;
-			text-decoration: none;
+		  cursor: pointer;
 		}
 		.thumbnail{
 			display: grid;
@@ -157,6 +158,9 @@
 			background-color:#647B64;
 			color: #FEFEFE; 
 		}
+		footer p{
+			margin-bottom: 0;
+		}
 		footer img{
 			display: inline-grid;
 		}
@@ -171,7 +175,7 @@
 		.coprig{
 			grid-column: 1/4;
 			grid-row: 2;
-			margin-top: 30px;
+			margin-top: 50px;
 		}
 		.thumbnail h1{
 			margin: auto;
@@ -198,6 +202,18 @@
 			clear: both;
 			float: right;
 			font-weight: bold;
+		}
+		.total-products{
+			font-weight: bolder;
+		}
+		#confirmationModal .modal-body {
+		  max-height: 400px;
+		  overflow-y: auto;
+		}
+		#btn-container{
+			display: flex;
+			  justify-content: left; /* Untuk mengatur posisi tombol secara horizontal di tengah */
+			  margin-top: 30px;
 		}
 
 		/* Untuk tampilan layar dengan lebar maksimum 768px */
@@ -254,9 +270,6 @@
 		.abt h2, .contact h2, .payment h2{
 			font-size: 14px;
 		}
-		.boxcart{
-			padding:20px 30px;
-			}
 
 		/* Untuk tampilan layar dengan lebar minimum 768px dan maksimum 1024px */
 		@media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -268,7 +281,6 @@
 		  /* CSS untuk mengatur tata letak pada layar dengan lebar minimum 1024px */
 		}
 	</style>
-	
 </head>
 <body>
 
@@ -304,7 +316,7 @@
 
 	<header><center><h1>OUR PRODUCTS.</h1></center></header>
 			<div class="product-grid" id="produk">
-			  <div class="product-item">
+			  <div class="product-item" id="items">
 			    <img src="images/pr.png" alt="Produk 1">
 			    <h3>Renew You Anti Aging Night Cream</h3>
 			    <p><del>Rp114.000</del><b>  Rp91.200</b></p>
@@ -391,12 +403,102 @@
 
 			  <!-- Tambahkan lebih banyak elemen .product-item sesuai kebutuhan -->
 			</div>
-			<div class="boxcart">
+		<div class="boxcart">
 			<div id="cart">
 				<h1><center>Shopping Cart</center></h1><hr><br>
 				<div class="total"></div>
 			</div>
-			<button onclick="resetCart()" class="btn" style="margin-top: 30px; background-color: #647B64">Reset Cart</button>
+			<div id="btn-container">
+				<button onclick="resetCart()" class="btn" style=" margin-right:10px;background-color: #647B64">Reset Cart</button>
+
+				<!-- Button untuk memunculkan modal -->
+		<button id="cartButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal">Checkout</button>
+			</div>
+
+		<!-- Modal keranjang -->
+		<div id="cartModal" class="modal fade" tabindex="-1" role="dialog">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Shopping Cart</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body" id="cartModalBody">
+		        <div class="checkout-info">
+		          <h5>Alamat Pengiriman</h5>
+		          <div class="form-group">
+		            <label for="fullName">Nama Lengkap</label>
+		            <input type="text" class="form-control" id="fullName" placeholder="Masukkan Nama Lengkap Anda" required>
+		          </div>
+		          <div class="form-group">
+		            <label for="email">Email</label>
+		            <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" required>
+		          </div>
+		          <div class="form-group">
+		            <label for="address">Alamat</label>
+		            <textarea class="form-control" id="address" rows="3" placeholder="Masukkan Alamat Anda"></textarea>
+		          </div>
+		          <div class="form-group">
+		            <label for="phoneNumber">Nomor Telepon</label>
+		            <input type="text" class="form-control" id="phoneNumber" placeholder="Masukkan nomor telepon Anda">
+		          </div>
+		        </div>
+		        <div class="checkout-items" id="checkoutItems"></div>
+		        <div class="checkout-total" id="checkoutTotal"></div>
+		        <div class="checkout-message" id="checkoutMessage"></div>
+
+		        <!-- Opsi Pengiriman -->
+		        <div class="form-group">
+		          <label for="shippingOption">Opsi Pengiriman</label>
+		          <select class="form-control" id="shippingOption">
+		            <option value="Standar">Pengiriman Standar</option>
+		            <option value="Express">Pengiriman Express</option>
+		          </select>
+		        </div>
+
+		        <!-- Opsi Pembayaran -->
+		        <div class="form-group">
+		          <label for="paymentOption">Opsi Pembayaran</label>
+		          <select class="form-control" id="paymentOption">
+		            <option value="Kartu Kredit">Kartu Kredit</option>
+		            <option value="Transfer Bank">Transfer Bank</option>
+		            <option value="COD">COD (Bayar di Tempat)</option>
+		          </select>
+		        </div>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary" onclick="checkout()">Buat Pesanan</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- Modal Konfirmasi -->
+		<div id="confirmationModal" class="modal fade" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Konfirmasi Pesanan</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body" id="confirmationModalBody">
+		        <p>Apakah Anda yakin ingin membuat pesanan?</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+		        <button type="button" class="btn btn-primary" onclick="showThankYouPopup()">Konfirmasi</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+
 		</div>
 
 		</div>
@@ -447,4 +549,5 @@ toggle.addEventListener('click', () => {
   menu.classList.toggle('open');
 });
 </script>
+
 </html>
