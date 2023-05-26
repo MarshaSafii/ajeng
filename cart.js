@@ -56,6 +56,13 @@ function showCartModal() {
   $('#cartModal').modal('show');
 }
 
+// Fungsi validasi email
+function isValidEmail(email) {
+  // Ekspresi reguler untuk memeriksa format email
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 function checkout() {
   // Mengambil informasi checkout
   var fullName = document.getElementById("fullName").value;
@@ -64,6 +71,17 @@ function checkout() {
   var phoneNumber = document.getElementById("phoneNumber").value;
   var shippingOption = document.getElementById("shippingOption").value;
   var paymentOption = document.getElementById("paymentOption").value;
+  
+  // Validasi input
+  if (fullName === "" || email === "" || address === "" || phoneNumber === "") {
+    alert("Harap lengkapi semua kolom informasi checkout.");
+    return;
+  }
+  // Validasi email
+  if (!isValidEmail(email)) {
+    alert("Email yang dimasukkan tidak valid.");
+    return;
+  }
 
   // Menampilkan informasi checkout
   var checkoutInfo = '<div class="checkout-info">';
@@ -124,7 +142,7 @@ function checkout() {
 
 function showThankYouPopup() {
   // Tampilkan popup "Terima Kasih"
-  alert("Terima kasih atas pesanan Anda!");
+  var modalContent = document.getElementById("thankYouModalContent");
 
   // Atur ulang keranjang
   resetCart();
@@ -138,8 +156,9 @@ function showThankYouPopup() {
   // Kosongkan informasi checkout di dalam modal
   document.getElementById("confirmationModalBody").innerHTML = "";
 
-  // Sembunyikan modal konfirmasi
+  // Sembunyikan modal konfirmasi dan menampilkan modal thankyou
   $('#confirmationModal').modal('hide');
+  $('#thankYouModal').modal('show');
 }
 
 
